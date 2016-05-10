@@ -1,0 +1,19 @@
+<div class="nav">
+  <ul class="left-nav">
+    <% if logged_in? %>
+      <li><%= "#{current_user.email}" %></li>
+    <% end %>
+  </ul>
+  <ul class="right-nav">
+    <li><%= link_to "Articles", articles_path %></li>
+    <li><%= link_to "Tags", tags_path %></li>
+    <% if logged_in? %>
+      <li><%= link_to 'Authors', authors_path %></li>
+      <li><%= link_to "New Article", new_article_path, class: "new_article" %></li>
+      <li><%= link_to 'New Author', new_author_path %></li>
+      <li><%= link_to "Logout", logout_path %></li>
+    <% else %>
+      <li><%= link_to "Login", login_path %></li>
+    <% end %>
+  </ul>
+</div>

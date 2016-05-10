@@ -1,0 +1,12 @@
+<p>
+  <strong>Username:</strong>
+  <%= @author.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @author.email %>
+</p>
+
+<td><%= link_to 'edit', edit_author_path(@author) %></td>
+<td><%= link_to 'delete', @author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
